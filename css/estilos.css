@@ -1,7 +1,22 @@
-/* Estilos principales de Fashion Runway */
-/* =================================
-   FASHION RUNWAY - ESTILOS GENERALES
-================================= */
+/* ==========================================
+   FASHION RUNWAY
+   DISEÑO EDITORIAL TIPO VOGUE
+   ========================================== */
+
+
+/* 1. CONFIGURACIÓN GENERAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --negro: #111111;
+    --negro-suave: #222222;
+    --blanco: #ffffff;
+    --marfil: #f6f3ed;
+    --beige: #e9e1d5;
+    --dorado: #b49a6c;
+    --gris: #777777;
+}
 
 * {
     margin: 0;
@@ -14,192 +29,538 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f7f4;
-    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--blanco);
+    color: var(--negro);
+    line-height: 1.7;
 }
 
-/* ENCABEZADO */
-
-header {
-    background-color: #111;
-    color: white;
-    padding: 25px 7%;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-nav {
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* 2. ENCABEZADO Y NAVEGACIÓN */
+
+.encabezado {
+    width: 100%;
+    background-color: var(--negro);
+    color: var(--blanco);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: auto;
+    min-height: 85px;
+    padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-nav h1 {
-    font-family: Georgia, serif;
-    letter-spacing: 4px;
-    font-size: 25px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
     gap: 25px;
-    flex-wrap: wrap;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    white-space: nowrap;
 }
 
-nav a:hover {
-    color: #c7a77b;
-}
-
-/* PORTADA */
-
-#inicio {
-    min-height: 550px;
-    background: linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.55)
-    ), url("../IMG/Pasarelas/fondo.jpg");
-
-    background-color: #292522;
-    background-size: cover;
-    background-position: center;
-
-    color: white;
+.menu {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu a {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--dorado);
+}
+
+
+/* 3. PORTADA PRINCIPAL */
+
+.inicio {
+    min-height: 650px;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.65)
+        ),
+        linear-gradient(135deg, #51483d, #171717 65%);
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 60px 20px;
+    color: var(--blanco);
+    padding: 100px 20px;
 }
 
-#inicio h2 {
-    font-family: Georgia, serif;
-    font-size: 65px;
-    margin-bottom: 25px;
+.inicio-contenido {
+    max-width: 850px;
 }
 
-#inicio p {
-    font-size: 18px;
-    max-width: 600px;
-    line-height: 1.7;
-    margin-bottom: 30px;
-}
-
-#inicio a {
-    background-color: #c7a77b;
-    color: #111;
-    padding: 16px 30px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* SECCIONES */
-
-section {
-    padding: 80px 8%;
-    text-align: center;
-}
-
-section h2 {
-    font-family: Georgia, serif;
-    font-size: 38px;
+.subtitulo {
+    color: var(--dorado);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
     margin-bottom: 20px;
 }
 
-section > p {
-    color: #777;
-    margin-bottom: 35px;
+.inicio h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 10vw, 110px);
+    font-weight: 500;
+    letter-spacing: 8px;
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
-/* CATÁLOGO */
-
-#catalogo {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+.inicio h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 20px;
 }
 
-/* PASARELAS */
-
-#pasarelas {
-    background-color: #eae5de;
+.inicio p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #dddddd;
+    font-size: 14px;
 }
 
-.video-container {
+
+/* 4. BOTONES */
+
+.boton {
+    display: inline-block;
+    background-color: var(--dorado);
+    color: var(--negro);
+    border: 1px solid var(--dorado);
+    padding: 14px 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    background-color: transparent;
+    color: var(--dorado);
+}
+
+
+/* 5. SECCIÓN NOSOTROS */
+
+.nosotros {
+    background-color: var(--marfil);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.nosotros h2,
+.catalogo h2,
+.pasarelas h2,
+.invitaciones h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 55px);
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.nosotros p {
     max-width: 850px;
-    margin: auto;
+    margin: 15px auto;
+    color: var(--gris);
+    font-size: 14px;
 }
 
-/* INVITACIONES */
 
-#formulario-invitacion {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+/* 6. CATÁLOGO */
+
+.catalogo {
+    padding: 100px 0;
+    text-align: center;
+    background-color: var(--blanco);
+}
+
+.catalogo > .contenedor > p:not(.subtitulo) {
+    color: var(--gris);
+    margin-bottom: 45px;
+    font-size: 14px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 45px;
     text-align: left;
 }
 
-#formulario-invitacion input {
-    padding: 14px;
-    border: 1px solid #ccc;
+.producto-card {
+    background-color: var(--marfil);
+    padding-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    background-color: var(--beige);
+}
+
+.producto-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 20px 18px 8px;
+}
+
+.producto-card p {
+    font-size: 12px;
+    color: var(--gris);
+    margin: 5px 18px;
+}
+
+.producto-card .precio {
+    color: var(--negro);
     font-size: 15px;
+    font-weight: 600;
+    margin-top: 15px;
 }
 
-#formulario-invitacion button {
-    padding: 15px;
-    background-color: #171717;
-    color: white;
-    border: none;
+.producto-card button {
+    margin: 18px;
+    padding: 11px 20px;
+    background-color: var(--negro);
+    color: var(--blanco);
+    border: 1px solid var(--negro);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-#formulario-invitacion button:hover {
-    background-color: #c7a77b;
-    color: black;
+.producto-card button:hover {
+    background-color: var(--dorado);
+    border-color: var(--dorado);
+    color: var(--negro);
 }
 
-/* PIE DE PÁGINA */
 
-footer {
-    background-color: #111;
-    color: white;
+/* 7. PASARELAS */
+
+.pasarelas {
+    background-color: var(--marfil);
+    padding: 100px 0;
     text-align: center;
-    padding: 30px;
 }
 
-/* ADAPTACIÓN A CELULARES */
+.pasarelas > .contenedor > p:not(.subtitulo) {
+    color: var(--gris);
+    font-size: 14px;
+    margin-bottom: 45px;
+}
 
-@media (max-width: 768px) {
+.pasarelas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: left;
+}
 
-    nav {
+.pasarela-card {
+    background-color: var(--blanco);
+    padding-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.pasarela-card:hover {
+    transform: translateY(-8px);
+}
+
+.pasarela-card img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    background-color: var(--beige);
+}
+
+.pasarela-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    font-weight: 600;
+    margin: 20px 20px 8px;
+}
+
+.pasarela-card p {
+    font-size: 12px;
+    color: var(--gris);
+    margin: 0 20px;
+}
+
+
+/* 8. INVITACIONES */
+
+.invitaciones {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+.invitaciones > .contenedor > p:not(.subtitulo) {
+    color: #cccccc;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+.invitaciones h2 {
+    color: var(--blanco);
+}
+
+#formulario-invitacion {
+    max-width: 550px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+.campo {
+    margin-bottom: 25px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 16px;
+    background-color: transparent;
+    color: var(--blanco);
+    border: 1px solid #777777;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+.campo input:focus {
+    border-color: var(--dorado);
+}
+
+.campo input::placeholder {
+    color: #aaaaaa;
+}
+
+#formulario-invitacion .boton {
+    width: 100%;
+}
+
+.resultado-invitacion {
+    max-width: 550px;
+    margin: 35px auto 0;
+    padding: 25px;
+    color: var(--negro);
+    background-color: var(--marfil);
+    overflow-wrap: anywhere;
+}
+
+.resultado-invitacion:empty {
+    display: none;
+}
+
+.resultado-invitacion h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.resultado-invitacion p {
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+.resultado-invitacion img {
+    width: 180px;
+    height: 180px;
+    margin: 20px auto;
+}
+
+
+/* 9. PIE DE PÁGINA */
+
+.footer {
+    background-color: #080808;
+    color: var(--blanco);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.footer h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.footer p {
+    color: #aaaaaa;
+    font-size: 11px;
+    margin: 8px 0;
+}
+
+
+/* 10. ADAPTACIÓN A TABLETAS */
+
+@media (max-width: 950px) {
+
+    .navbar {
         flex-direction: column;
+        padding: 20px;
     }
 
-    nav ul {
+    .menu {
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 18px;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pasarelas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* 11. ADAPTACIÓN A CELULARES */
+
+@media (max-width: 600px) {
+
+    .navbar {
         gap: 15px;
     }
 
-    #inicio h2 {
-        font-size: 40px;
+    .logo {
+        font-size: 26px;
     }
 
-    #catalogo {
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .inicio {
+        min-height: 550px;
+        padding: 70px 20px;
+    }
+
+    .inicio h1 {
+        letter-spacing: 3px;
+    }
+
+    .inicio h2 {
+        font-size: 25px;
+    }
+
+    .inicio p {
+        font-size: 12px;
+    }
+
+    .nosotros,
+    .catalogo,
+    .pasarelas,
+    .invitaciones {
+        padding: 70px 0;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .producto-card img {
+        height: 400px;
+    }
+
+    .pasarelas-grid {
         grid-template-columns: 1fr;
     }
 
-    section {
-        padding: 55px 6%;
+    .pasarela-card img {
+        height: 420px;
     }
+
+    .contenedor {
+        width: 88%;
+    }
+
+    .footer {
+        padding: 40px 15px;
+    }
+
+}
+
+
+/* 12. ACCESIBILIDAD Y MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+
 }
