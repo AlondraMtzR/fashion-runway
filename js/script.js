@@ -1,6 +1,6 @@
-// Funciones principales de Fashion Runway
 // ==========================================
-// FASHION RUNWAY - FUNCIONES PRINCIPALES
+// FASHION RUNWAY
+// Funciones principales de la página
 // ==========================================
 
 
@@ -8,79 +8,97 @@
 
 const prendas = [
     {
+        id: 1,
         nombre: "Vestido Elegance",
-        precio: 1200,
-        descripcion: "Vestido de colección elegante."
+        descripcion: "Vestido elegante de colección.",
+        precio: 2500,
+        imagen: "IMG/prendas/vestido.jpg"
     },
     {
+        id: 2,
         nombre: "Conjunto Runway",
-        precio: 950,
-        descripcion: "Diseño exclusivo de pasarela."
+        descripcion: "Conjunto moderno de pasarela.",
+        precio: 3200,
+        imagen: "IMG/prendas/conjunto.jpg"
     },
     {
-        nombre: "Look Urban Fashion",
-        precio: 850,
-        descripcion: "Estilo moderno y urbano."
+        id: 3,
+        nombre: "Look Urban",
+        descripcion: "Estilo urbano y contemporáneo.",
+        precio: 1800,
+        imagen: "IMG/prendas/urban.jpg"
+    },
+    {
+        id: 4,
+        nombre: "Fashion Classic",
+        descripcion: "Diseño clásico de alta moda.",
+        precio: 2900,
+        imagen: "IMG/prendas/classic.jpg"
     }
 ];
 
 
-// 2. MOSTRAR PRENDAS
-
-const catalogo = document.getElementById("catalogo");
+// 2. MOSTRAR PRENDAS EN EL CATÁLOGO
 
 function mostrarPrendas() {
 
-    if (!catalogo) return;
+    const contenedor = document.getElementById("productos-grid");
 
-    catalogo.innerHTML = "";
+    if (!contenedor) return;
 
-    prendas.forEach((prenda, indice) => {
+    contenedor.innerHTML = "";
+
+    prendas.forEach(prenda => {
 
         const tarjeta = document.createElement("article");
 
-        tarjeta.classList.add("tarjeta-prenda");
+        tarjeta.className = "producto-card";
 
         tarjeta.innerHTML = `
-            <div class="imagen-prenda">
-                <span>FASHION RUNWAY</span>
-            </div>
+            <img src="${prenda.imagen}"
+                 alt="${prenda.nombre}"
+                 onerror="this.style.display='none'">
 
             <h3>${prenda.nombre}</h3>
 
             <p>${prenda.descripcion}</p>
 
-            <strong>$${prenda.precio} MXN</strong>
+            <p class="precio">
+                $${prenda.precio.toLocaleString("es-MX")} MXN
+            </p>
 
-            <button onclick="reservarPrenda(${indice})">
-                Comprar / Reservar
+            <button onclick="reservarPrenda(${prenda.id})">
+                Reservar
             </button>
         `;
 
-        catalogo.appendChild(tarjeta);
+        contenedor.appendChild(tarjeta);
+
     });
+
 }
 
 
-// 3. RESERVAR PRENDAS
+// 3. FUNCIÓN PARA RESERVAR PRENDAS
 
-function reservarPrenda(indice) {
+function reservarPrenda(id) {
 
-    const prenda = prendas[indice];
+    const prenda = prendas.find(item => item.id === id);
+
+    if (!prenda) return;
 
     alert(
         "Has seleccionado: " + prenda.nombre +
         "\nPrecio: $" + prenda.precio + " MXN" +
-        "\nPróximamente podrás completar tu solicitud."
+        "\n\nLa reserva se realizará próximamente."
     );
+
 }
 
 
-// 4. FORMULARIO DE INVITACIONES
+// 4. REGISTRO DE INVITACIONES
 
-const formulario = document.getElementById(
-    "formulario-invitacion"
-);
+const formulario = document.getElementById("formulario-invitacion");
 
 if (formulario) {
 
@@ -92,64 +110,68 @@ if (formulario) {
 
         const correo = document.getElementById("correo").value.trim();
 
+        const resultado = document.getElementById("resultado-invitacion");
+
         if (!nombre || !correo) {
-            alert("Completa todos los campos.");
+
+            alert("Por favor, completa todos los campos.");
+
             return;
+
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
+
+            alert("Ingresa un correo electrónico válido.");
+
+            return;
+
         }
 
         // Generar folio único
-        const folio = "FR-" + Date.now();
 
-        // Crear información de la invitación
+        const folio = "FR-" + Date.now().toString().slice(-8);
+
+        // Crear información del invitado
+
         const invitacion = {
             nombre: nombre,
             correo: correo,
             folio: folio
         };
 
-        // Guardar solicitud en el navegador
-        const solicitudes = JSON.parse(
-            localStorage.getItem("invitaciones") || "[]"
-        );
-
-        solicitudes.push(invitacion);
-
-        localStorage.setItem(
-            "invitaciones",
-            JSON.stringify(solicitudes)
-        );
-
-        // Mostrar resultado
-        const resultado = document.getElementById(
-            "resultado-invitacion"
-        );
+        // Mostrar invitación
 
         resultado.innerHTML = `
-            <h3>¡Solicitud registrada!</h3>
-            <p>Nombre: ${nombre}</p>
-            <p>Folio: ${folio}</p>
-            <div id="codigo-qr"></div>
+            <h3>¡Invitación registrada!</h3>
+
+            <p>Nombre: ${invitacion.nombre}</p>
+
+            <p>Correo: ${invitacion.correo}</p>
+
+            <p>Folio: ${invitacion.folio}</p>
+
+            <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(folio)}"
+                alt="Código QR de invitación"
+            >
+
+            <p>Presenta este código QR en el evento.</p>
         `;
-
-        // Generar código QR
-        const qr = document.getElementById("codigo-qr");
-
-        if (window.QRCode) {
-            new QRCode(qr, {
-                text: folio,
-                width: 160,
-                height: 160
-            });
-        } else {
-            qr.textContent = "Folio: " + folio;
-        }
 
         formulario.reset();
 
     });
+
 }
 
 
-// 5. INICIAR CATÁLOGO
+// 5. INICIALIZAR LA PÁGINA
 
-mostrarPrendas();
+document.addEventListener("DOMContentLoaded", function() {
+
+    mostrarPrendas();
+
+    console.log("Fashion Runway está funcionando correctamente.");
+
+});
