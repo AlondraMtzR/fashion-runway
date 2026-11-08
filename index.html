@@ -1,142 +1,202 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fashion Runway | Pasarela de Moda</title>
+    <meta name="description" content="Fashion Runway: plataforma de moda, colecciones y pasarelas de estudiantes de diseño.">
 
+    <title>Fashion Runway | Plataforma de Moda</title>
+
+    <!-- CONEXIÓN CON CSS -->
     <link rel="stylesheet" href="CSS/estilos.css">
-
 </head>
 
 <body>
 
-    <!-- ENCABEZADO -->
+    <!-- =================================
+         ENCABEZADO Y MENÚ DE NAVEGACIÓN
+    ================================== -->
 
     <header>
-
         <nav>
-
             <h1>FASHION RUNWAY</h1>
 
             <ul>
-
                 <li><a href="#inicio">Inicio</a></li>
-
                 <li><a href="#colecciones">Colecciones</a></li>
-
                 <li><a href="#pasarelas">Pasarelas</a></li>
-
                 <li><a href="#invitaciones">Invitaciones</a></li>
-
             </ul>
-
         </nav>
-
     </header>
 
-    <!-- PORTADA -->
 
     <main>
+
+        <!-- =================================
+             PORTADA PRINCIPAL
+        ================================== -->
 
         <section id="inicio">
 
             <h2>La moda cobra vida</h2>
 
             <p>
-
                 Descubre el talento, la creatividad y las
-
                 nuevas propuestas de los estudiantes de
-
                 diseño de moda.
-
             </p>
 
-            <a href="#colecciones">Descubrir colecciones</a>
+            <a href="#colecciones">
+                Descubrir colecciones
+            </a>
 
         </section>
 
-        <!-- CATÁLOGO -->
+
+        <!-- =================================
+             CATÁLOGO DE PRENDAS
+        ================================== -->
 
         <section id="colecciones">
 
             <h2>Nuestras colecciones</h2>
 
-            <p>Diseños exclusivos de nuevos talentos.</p>
+            <p>
+                Diseños exclusivos creados por nuevos
+                talentos de la moda.
+            </p>
 
             <div id="catalogo">
 
-                <!-- Aquí aparecerán las prendas -->
+                <!-- JavaScript insertará las prendas aquí -->
 
             </div>
 
         </section>
 
-        <!-- PASARELAS -->
+
+        <!-- =================================
+             VIDEOS DE PASARELAS
+        ================================== -->
 
         <section id="pasarelas">
 
             <h2>Pasarelas</h2>
 
-            <p>Revive los mejores momentos de la moda.</p>
+            <p>
+                Vive la experiencia de nuestras
+                presentaciones y colecciones.
+            </p>
 
             <div class="video-container">
 
-                <!-- Aquí agregaremos el video de YouTube -->
+                <iframe
+                    width="100%"
+                    height="450"
+                    src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
+                    title="Video de pasarela de moda"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
 
             </div>
 
         </section>
 
-        <!-- INVITACIONES -->
+
+        <!-- =================================
+             FORMULARIO DE INVITACIONES
+        ================================== -->
 
         <section id="invitaciones">
 
             <h2>Solicita tu invitación</h2>
 
-            <p>Regístrate para obtener tu pase digital.</p>
+            <p>
+                Regístrate para solicitar tu pase digital
+                y formar parte de nuestros eventos.
+            </p>
 
             <form id="formulario-invitacion">
 
-                <label for="nombre">Nombre completo:</label>
+                <label for="nombre">
+                    Nombre completo:
+                </label>
 
-                <input type="text" id="nombre"
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Escribe tu nombre completo"
+                    required
+                >
 
-                    placeholder="Escribe tu nombre" required>
+                <label for="correo">
+                    Correo electrónico:
+                </label>
 
-                <label for="correo">Correo electrónico:</label>
-
-                <input type="email" id="correo"
-
-                    placeholder="ejemplo@correo.com" required>
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="ejemplo@correo.com"
+                    required
+                >
 
                 <button type="submit">
-
                     Solicitar invitación
-
                 </button>
 
             </form>
 
-            <div id="resultado-invitacion"></div>
+            <!-- RESULTADO DE LA INVITACIÓN -->
+
+            <div id="resultado-invitacion">
+
+                <!-- Aquí aparecerá el folio y el código QR -->
+
+            </div>
 
         </section>
 
     </main>
 
-    <!-- PIE DE PÁGINA -->
+
+    <!-- =================================
+         PIE DE PÁGINA
+    ================================== -->
 
     <footer>
 
-        <p>© 2026 Fashion Runway | Todos los derechos reservados.</p>
+        <h3>FASHION RUNWAY</h3>
+
+        <p>
+            Moda, creatividad y talento en un solo lugar.
+        </p>
+
+        <p>
+            © 2026 Fashion Runway.
+            Todos los derechos reservados.
+        </p>
 
     </footer>
+
+
+    <!-- =================================
+         BIBLIOTECA PARA GENERAR CÓDIGOS QR
+    ================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+
+    <!-- =================================
+         CONEXIÓN CON JAVASCRIPT
+    ================================== -->
 
     <script src="js/script.js"></script>
 
