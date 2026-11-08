@@ -3,162 +3,309 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Fashion Runway: plataforma de moda, colecciones y pasarelas de estudiantes de diseño.">
+    <meta name="description" content="Fashion Runway, plataforma de moda, prendas y eventos de pasarela.">
 
-    <title>Fashion Runway | Plataforma de Moda</title>
+    <title>Fashion Runway | Pasarela de Moda</title>
 
-    <!-- CONEXIÓN CON CSS -->
+    <!-- Conexión con CSS -->
     <link rel="stylesheet" href="CSS/estilos.css">
+
+    <!-- Conexión con JavaScript -->
+    <script src="js/script.js" defer></script>
+
 </head>
 
 <body>
 
-    <!-- =================================
-         ENCABEZADO Y MENÚ DE NAVEGACIÓN
-    ================================== -->
+    <!-- ================================= -->
+    <!-- ENCABEZADO Y MENÚ DE NAVEGACIÓN -->
+    <!-- ================================= -->
 
-    <header>
-        <nav>
-            <h1>FASHION RUNWAY</h1>
+    <header class="encabezado">
 
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#colecciones">Colecciones</a></li>
-                <li><a href="#pasarelas">Pasarelas</a></li>
-                <li><a href="#invitaciones">Invitaciones</a></li>
+        <nav class="navbar">
+
+            <a href="#inicio" class="logo">
+                FASHION RUNWAY
+            </a>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#inicio">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="#nosotros">Nosotros</a>
+                </li>
+
+                <li>
+                    <a href="#catalogo">Catálogo</a>
+                </li>
+
+                <li>
+                    <a href="#pasarelas">Pasarelas</a>
+                </li>
+
+                <li>
+                    <a href="#invitaciones">Invitaciones</a>
+                </li>
+
             </ul>
+
         </nav>
+
     </header>
 
 
+    <!-- ================================= -->
+    <!-- SECCIÓN PRINCIPAL -->
+    <!-- ================================= -->
+
     <main>
 
-        <!-- =================================
-             PORTADA PRINCIPAL
-        ================================== -->
+        <section id="inicio" class="inicio">
 
-        <section id="inicio">
+            <div class="inicio-contenido">
 
-            <h2>La moda cobra vida</h2>
+                <p class="subtitulo">
+                    MODA · ESTILO · ELEGANCIA
+                </p>
 
-            <p>
-                Descubre el talento, la creatividad y las
-                nuevas propuestas de los estudiantes de
-                diseño de moda.
-            </p>
+                <h1>
+                    FASHION RUNWAY
+                </h1>
 
-            <a href="#colecciones">
-                Descubrir colecciones
-            </a>
+                <h2>
+                    Descubre el mundo de la moda
+                </h2>
 
-        </section>
+                <p>
+                    Explora las últimas tendencias, conoce nuestras
+                    colecciones y vive la experiencia de las pasarelas
+                    de moda.
+                </p>
 
-
-        <!-- =================================
-             CATÁLOGO DE PRENDAS
-        ================================== -->
-
-        <section id="colecciones">
-
-            <h2>Nuestras colecciones</h2>
-
-            <p>
-                Diseños exclusivos creados por nuevos
-                talentos de la moda.
-            </p>
-
-            <div id="catalogo">
-
-                <!-- JavaScript insertará las prendas aquí -->
+                <a href="#catalogo" class="boton">
+                    Explorar colección
+                </a>
 
             </div>
 
         </section>
 
 
-        <!-- =================================
-             VIDEOS DE PASARELAS
-        ================================== -->
+        <!-- ================================= -->
+        <!-- SECCIÓN NOSOTROS -->
+        <!-- ================================= -->
 
-        <section id="pasarelas">
+        <section id="nosotros" class="nosotros">
 
-            <h2>Pasarelas</h2>
+            <div class="contenedor">
 
-            <p>
-                Vive la experiencia de nuestras
-                presentaciones y colecciones.
-            </p>
+                <h2>Sobre Fashion Runway</h2>
 
-            <div class="video-container">
+                <p>
+                    Fashion Runway es una plataforma dedicada al
+                    mundo de la moda, donde los usuarios pueden
+                    descubrir prendas, conocer colecciones y consultar
+                    información sobre eventos y pasarelas.
+                </p>
 
-                <iframe
-                    width="100%"
-                    height="450"
-                    src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
-                    title="Video de pasarela de moda"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+                <p>
+                    Nuestro objetivo es ofrecer una experiencia
+                    digital moderna, organizada y accesible para
+                    los amantes de la moda.
+                </p>
 
             </div>
 
         </section>
 
 
-        <!-- =================================
-             FORMULARIO DE INVITACIONES
-        ================================== -->
+        <!-- ================================= -->
+        <!-- CATÁLOGO DE PRENDAS -->
+        <!-- ================================= -->
 
-        <section id="invitaciones">
+        <section id="catalogo" class="catalogo">
 
-            <h2>Solicita tu invitación</h2>
+            <div class="contenedor">
 
-            <p>
-                Regístrate para solicitar tu pase digital
-                y formar parte de nuestros eventos.
-            </p>
+                <p class="subtitulo">
+                    NUESTRAS COLECCIONES
+                </p>
 
-            <form id="formulario-invitacion">
+                <h2>Catálogo de prendas</h2>
 
-                <label for="nombre">
-                    Nombre completo:
-                </label>
+                <p>
+                    Descubre diferentes estilos y encuentra
+                    las prendas que mejor representen tu personalidad.
+                </p>
 
-                <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Escribe tu nombre completo"
-                    required
+                <!-- JavaScript colocará aquí los productos -->
+
+                <div id="productos-grid" class="productos-grid">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- SECCIÓN DE PASARELAS -->
+        <!-- ================================= -->
+
+        <section id="pasarelas" class="pasarelas">
+
+            <div class="contenedor">
+
+                <p class="subtitulo">
+                    EVENTOS Y TENDENCIAS
+                </p>
+
+                <h2>Pasarelas de moda</h2>
+
+                <p>
+                    Conoce los eventos, presentaciones y
+                    colecciones que forman parte del mundo
+                    de la moda.
+                </p>
+
+                <div class="pasarelas-grid">
+
+                    <article class="pasarela-card">
+
+                        <img
+                            src="IMG/Pasarelas/pasarela1.jpg"
+                            alt="Evento de pasarela de moda"
+                        >
+
+                        <h3>Fashion Show</h3>
+
+                        <p>
+                            Presentación de nuevas tendencias
+                            y colecciones.
+                        </p>
+
+                    </article>
+
+
+                    <article class="pasarela-card">
+
+                        <img
+                            src="IMG/Pasarelas/pasarela2.jpg"
+                            alt="Modelos en pasarela"
+                        >
+
+                        <h3>Runway Collection</h3>
+
+                        <p>
+                            Descubre diseños y propuestas
+                            de diferentes estilos.
+                        </p>
+
+                    </article>
+
+
+                    <article class="pasarela-card">
+
+                        <img
+                            src="IMG/Pasarelas/pasarela3.jpg"
+                            alt="Colección de moda"
+                        >
+
+                        <h3>Fashion Trends</h3>
+
+                        <p>
+                            Inspiración y tendencias del
+                            mundo de la moda.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- SECCIÓN DE INVITACIONES -->
+        <!-- ================================= -->
+
+        <section id="invitaciones" class="invitaciones">
+
+            <div class="contenedor">
+
+                <p class="subtitulo">
+                    FORMA PARTE DE NUESTROS EVENTOS
+                </p>
+
+                <h2>Solicita tu invitación</h2>
+
+                <p>
+                    Registra tus datos para generar tu invitación
+                    a nuestros próximos eventos de moda.
+                </p>
+
+                <form id="formulario-invitacion">
+
+                    <div class="campo">
+
+                        <label for="nombre">
+                            Nombre completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Escribe tu nombre"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="correo">
+                            Correo electrónico
+                        </label>
+
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            placeholder="ejemplo@correo.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button type="submit" class="boton">
+                        Generar invitación
+                    </button>
+
+                </form>
+
+
+                <!-- Aquí aparecerá el folio y código QR -->
+
+                <div
+                    id="resultado-invitacion"
+                    class="resultado-invitacion"
+                    aria-live="polite"
                 >
 
-                <label for="correo">
-                    Correo electrónico:
-                </label>
-
-                <input
-                    type="email"
-                    id="correo"
-                    name="correo"
-                    placeholder="ejemplo@correo.com"
-                    required
-                >
-
-                <button type="submit">
-                    Solicitar invitación
-                </button>
-
-            </form>
-
-            <!-- RESULTADO DE LA INVITACIÓN -->
-
-            <div id="resultado-invitacion">
-
-                <!-- Aquí aparecerá el folio y el código QR -->
+                </div>
 
             </div>
 
@@ -167,38 +314,28 @@
     </main>
 
 
-    <!-- =================================
-         PIE DE PÁGINA
-    ================================== -->
+    <!-- ================================= -->
+    <!-- PIE DE PÁGINA -->
+    <!-- ================================= -->
 
-    <footer>
+    <footer class="footer">
 
-        <h3>FASHION RUNWAY</h3>
+        <div class="contenedor">
 
-        <p>
-            Moda, creatividad y talento en un solo lugar.
-        </p>
+            <h2>FASHION RUNWAY</h2>
 
-        <p>
-            © 2026 Fashion Runway.
-            Todos los derechos reservados.
-        </p>
+            <p>
+                Moda, estilo y elegancia en un solo lugar.
+            </p>
+
+            <p>
+                © 2026 Fashion Runway. Todos los derechos reservados.
+            </p>
+
+        </div>
 
     </footer>
 
-
-    <!-- =================================
-         BIBLIOTECA PARA GENERAR CÓDIGOS QR
-    ================================== -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-
-    <!-- =================================
-         CONEXIÓN CON JAVASCRIPT
-    ================================== -->
-
-    <script src="js/script.js"></script>
 
 </body>
 
