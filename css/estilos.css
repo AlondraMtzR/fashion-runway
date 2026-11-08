@@ -1,1 +1,205 @@
 /* Estilos principales de Fashion Runway */
+/* =================================
+   FASHION RUNWAY - ESTILOS GENERALES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f7f4;
+    color: #222;
+}
+
+/* ENCABEZADO */
+
+header {
+    background-color: #111;
+    color: white;
+    padding: 25px 7%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav h1 {
+    font-family: Georgia, serif;
+    letter-spacing: 4px;
+    font-size: 25px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #c7a77b;
+}
+
+/* PORTADA */
+
+#inicio {
+    min-height: 550px;
+    background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
+    ), url("../IMG/Pasarelas/fondo.jpg");
+
+    background-color: #292522;
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#inicio h2 {
+    font-family: Georgia, serif;
+    font-size: 65px;
+    margin-bottom: 25px;
+}
+
+#inicio p {
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+#inicio a {
+    background-color: #c7a77b;
+    color: #111;
+    padding: 16px 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECCIONES */
+
+section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+section h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+section > p {
+    color: #777;
+    margin-bottom: 35px;
+}
+
+/* CATÁLOGO */
+
+#catalogo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* PASARELAS */
+
+#pasarelas {
+    background-color: #eae5de;
+}
+
+.video-container {
+    max-width: 850px;
+    margin: auto;
+}
+
+/* INVITACIONES */
+
+#formulario-invitacion {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+#formulario-invitacion input {
+    padding: 14px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+#formulario-invitacion button {
+    padding: 15px;
+    background-color: #171717;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#formulario-invitacion button:hover {
+    background-color: #c7a77b;
+    color: black;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #inicio h2 {
+        font-size: 40px;
+    }
+
+    #catalogo {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
